@@ -1,20 +1,25 @@
 package ws.synopsis.req.service;
 
 import java.util.List;
-import java.util.Optional;
+//import java.util.Optional;
+import ws.synopsis.req.entity.User;
+import ws.synopsis.req.model.UserModel;
 
-import ws.synopsis.req.entities.User;
 
-public interface UserService {
 
-	public List<User> findAllUser();
-
-	public Optional<User> findUserByID(Long id);
+public interface UserService {	
 	
-	public User saveUser(User userNew);
+	public abstract UserModel addUser(UserModel userModel);
 	
-	public String deleteUser(Long id);
+	public abstract List<UserModel> findAllUser();
+
+	public abstract UserModel findUserModelById(int id);
 	
-	public String updateUser(User userUpdate);
+	public abstract String deleteUser(int id);
+	
+	public abstract UserModel updateUser(UserModel userUpdate);
+	
+	
+	public abstract User findUserById(int id);
 
 }
